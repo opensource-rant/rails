@@ -220,71 +220,86 @@ rails_conductor_inbound_email_incinerate POST   /rails/conductor/action_mailbox/
       URI               | /cart(.:format)
       Controller#Action | cart#show
       --[ Route 2 ]--------------
-      Prefix            | rails_postmark_inbound_emails
-      Verb              | POST
-      URI               | /rails/action_mailbox/postmark/inbound_emails(.:format)
-      Controller#Action | action_mailbox/ingresses/postmark/inbound_emails#create
-      --[ Route 3 ]--------------
-      Prefix            | rails_relay_inbound_emails
-      Verb              | POST
-      URI               | /rails/action_mailbox/relay/inbound_emails(.:format)
-      Controller#Action | action_mailbox/ingresses/relay/inbound_emails#create
-      --[ Route 4 ]--------------
-      Prefix            | rails_sendgrid_inbound_emails
-      Verb              | POST
-      URI               | /rails/action_mailbox/sendgrid/inbound_emails(.:format)
-      Controller#Action | action_mailbox/ingresses/sendgrid/inbound_emails#create
-      --[ Route 5 ]--------------
-      Prefix            | rails_mandrill_inbound_health_check
+      Prefix            | rails_conductor
       Verb              | GET
-      URI               | /rails/action_mailbox/mandrill/inbound_emails(.:format)
-      Controller#Action | action_mailbox/ingresses/mandrill/inbound_emails#health_check
+      URI               | /rails/conductor(.:format)
+      Controller#Action | rails/conductor/panels#show
+      --[ Route 3 ]--------------
+      Prefix            | rails_conductor_source_statistics
+      Verb              | GET
+      URI               | /rails/conductor/source/statistics(.:format)
+      Controller#Action | rails/conductor/source/statistics#show
+      --[ Route 4 ]--------------
+      Prefix            | rails_conductor_source_notes
+      Verb              | GET
+      URI               | /rails/conductor/source/notes(.:format)
+      Controller#Action | rails/conductor/source/notes#show
+      --[ Route 5 ]--------------
+      Prefix            | rails_amazon_inbound_emails
+      Verb              | POST
+      URI               | /rails/action_mailbox/amazon/inbound_emails(.:format)
+      Controller#Action | action_mailbox/ingresses/amazon/inbound_emails#create
       --[ Route 6 ]--------------
       Prefix            | rails_mandrill_inbound_emails
       Verb              | POST
       URI               | /rails/action_mailbox/mandrill/inbound_emails(.:format)
       Controller#Action | action_mailbox/ingresses/mandrill/inbound_emails#create
       --[ Route 7 ]--------------
+      Prefix            | rails_postmark_inbound_emails
+      Verb              | POST
+      URI               | /rails/action_mailbox/postmark/inbound_emails(.:format)
+      Controller#Action | action_mailbox/ingresses/postmark/inbound_emails#create
+      --[ Route 8 ]--------------
+      Prefix            | rails_relay_inbound_emails
+      Verb              | POST
+      URI               | /rails/action_mailbox/relay/inbound_emails(.:format)
+      Controller#Action | action_mailbox/ingresses/relay/inbound_emails#create
+      --[ Route 9 ]--------------
+      Prefix            | rails_sendgrid_inbound_emails
+      Verb              | POST
+      URI               | /rails/action_mailbox/sendgrid/inbound_emails(.:format)
+      Controller#Action | action_mailbox/ingresses/sendgrid/inbound_emails#create
+      --[ Route 10 ]-------------
       Prefix            | rails_mailgun_inbound_emails
       Verb              | POST
       URI               | /rails/action_mailbox/mailgun/inbound_emails/mime(.:format)
       Controller#Action | action_mailbox/ingresses/mailgun/inbound_emails#create
-      --[ Route 8 ]--------------
+      --[ Route 11 ]-------------
       Prefix            | rails_conductor_inbound_emails
       Verb              | GET
       URI               | /rails/conductor/action_mailbox/inbound_emails(.:format)
       Controller#Action | rails/conductor/action_mailbox/inbound_emails#index
-      --[ Route 9 ]--------------
+      --[ Route 12 ]-------------
       Prefix            | 
       Verb              | POST
       URI               | /rails/conductor/action_mailbox/inbound_emails(.:format)
       Controller#Action | rails/conductor/action_mailbox/inbound_emails#create
-      --[ Route 10 ]-------------
+      --[ Route 13 ]-------------
       Prefix            | new_rails_conductor_inbound_email
       Verb              | GET
       URI               | /rails/conductor/action_mailbox/inbound_emails/new(.:format)
       Controller#Action | rails/conductor/action_mailbox/inbound_emails#new
-      --[ Route 11 ]-------------
+      --[ Route 14 ]-------------
       Prefix            | edit_rails_conductor_inbound_email
       Verb              | GET
       URI               | /rails/conductor/action_mailbox/inbound_emails/:id/edit(.:format)
       Controller#Action | rails/conductor/action_mailbox/inbound_emails#edit
-      --[ Route 12 ]-------------
+      --[ Route 15 ]-------------
       Prefix            | rails_conductor_inbound_email
       Verb              | GET
       URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
       Controller#Action | rails/conductor/action_mailbox/inbound_emails#show
-      --[ Route 13 ]-------------
+      --[ Route 16 ]-------------
       Prefix            | 
       Verb              | PATCH
       URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
       Controller#Action | rails/conductor/action_mailbox/inbound_emails#update
-      --[ Route 14 ]-------------
+      --[ Route 17 ]-------------
       Prefix            | 
       Verb              | PUT
       URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
       Controller#Action | rails/conductor/action_mailbox/inbound_emails#update
-      --[ Route 15 ]-------------
+      --[ Route 18 ]-------------
       Prefix            | 
       Verb              | DELETE
       URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
