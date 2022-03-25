@@ -58,16 +58,18 @@ provider:
 #    - include-me.rb
 #    - include-me-dir/**
 
+plugins:
+  - serverless-offline
 functions:
   hello:
     handler: handler.hello
-#    The following are a few example events you can configure
-#    NOTE: Please make sure to change your handler code to work with those events
-#    Check the event documentation for details
-#    events:
-#      - httpApi:
-#          path: /users/create
-#          method: get
+    events:
+      - http:
+          path: /test
+          method: post
+      - http:
+          path: /test
+          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
