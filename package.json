@@ -1,0 +1,12 @@
+{
+  "name": "web-reader",
+  "version": "0.0.1",
+  "description": "Write HTML snippets to disk to read later",
+  "scripts": {
+    "dev": "webextension-toolbox dev",
+    "build": "webextension-toolbox build"
+  },
+  "devDependencies": {
+    "webextension-toolbox": "latest"
+  }
+}
