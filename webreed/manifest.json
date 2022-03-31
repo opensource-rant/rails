@@ -1,0 +1,19 @@
+{
+  "name": "__MSG_appName__",
+  "short_name": "__MSG_appShortName__",
+  "description": "__MSG_appDescription__",
+  "version": "0.0.0",
+  "manifest_version": 3,
+  "icons": {
+  },
+  "background": {},
+  "minimum_chrome_version": "10.0",
+  "chrome_url_overrides": {
+    "bookmarks": "index.html"
+  },
+  "permissions": [
+    "bookmarks",
+    "activeTab",
+    "fileSystem"
+  ]
+}
