@@ -1,5 +1,15 @@
 console.log(`'Allo 'Allo! Bookmarks`)
 
-var list = []
+chrome.bookmarks.get('2', function (bookmarks) {
+  console.log(bookmarks)
+})
 
-chrome.fileSystem.chooseEntry(
+// function reqListener () {
+//   console.log(this.responseText);
+// }
+//
+// var oReq = new XMLHttpRequest();
+// oReq.addEventListener("load", reqListener);
+// oReq.open("GET", "http://www.example.org/example.txt");
+// oReq.send();
+//

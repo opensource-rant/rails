@@ -1,4 +1,4 @@
-import * as Tag from './Tag.js';
+import { TagList } from './TagList.js';
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,7 +19,7 @@ function App() {
           Learn React
         </a>
       </header>
-      {Tag.response().map((label) => { return <a href="test">{ label }</a> })};
+      <TagList />
     </div>
   );
 }
