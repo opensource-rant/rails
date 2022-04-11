@@ -1,8 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 
 class TagList extends Component {
   render() {
-    const items = [{ 'id': 1, name: 'engineer' }, { 'id': 2, 'name': 'manager'}];
+    async function fetchUserData(id) {
+          const response = await fetch("/" + id);
+          setUser(await response.json());
+        }
+
+    useEffect(() => {
+          fetchUserData();
+        }, []);
     return (
       <ul>
         {items.map(item => (
