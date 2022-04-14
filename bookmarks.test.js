@@ -15,10 +15,33 @@
 // title: "reactjs"
 // windowId: 2998
 // [[Prototype]]: Object
-it('creates a bookmark for each tab', () => {
-  expect(true).toBe(true)
-})
-it('includes details about the tab group in the URL')
 // sends data downstream
 // invokes tensor.js
-it('uses machine learning to group large amounts of info based on the training set (tabGroups)')
+
+let bookmarks,
+    tabs
+
+import { TabGroup } from './tabGroup'
+
+let tab = {
+  id: 1,
+  url: 'url',
+  title: 'title',
+  favIconUrl: 'favIconUrl'
+}
+
+import { BookmarkCollection } from './bookmarks'
+jest.mock('./tabGroup')
+beforeEach(() => {
+  tabs = [tab]
+  TabGroup.mockClear()
+  new BookmarkCollection(tabs).annotate()
+})
+describe('when the id is a positive integer', () => {
+  it('calls getTabGroupInfo with the id of the tab', () => {
+    expect(TabGroup).toHaveBeenCalledWith(1)
+  })
+})
+test.todo('when the id is -1')
+test.todo('includes details about the tab group in the URL')
+test.todo('uses machine learning to group large amounts of info based on the training set (tabGroups)')

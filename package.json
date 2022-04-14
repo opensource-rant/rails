@@ -11,8 +11,9 @@
     "build": "webextension-toolbox build"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "jest": "^27.5.1",
     "serverless-offline": "^8.5.0",
-    "webextension-toolbox": "latest",
-    "jest": "^27.5.1"
+    "webextension-toolbox": "^4.0.3"
   }
 }
