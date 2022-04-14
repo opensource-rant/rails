@@ -6,5 +6,5 @@
 //     code: 'document.body.style.backgroundColor="red"'
 //   });
 // });
-document.body.style.backgroundColor="red"
+// document.body.style.backgroundColor="red"
 console.log(`'Allo 'Allo! Event Page`)

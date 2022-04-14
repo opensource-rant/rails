@@ -1,8 +1,12 @@
 console.log(`'Allo 'Allo! Bookmarks`)
 
-// https://developer.chrome.com/docs/extensions/reference/tabGroups/#method
-chrome.tabGroups.get('2', function (tabGroup) {
-  console.log(tabGroup)
+// chrome.bookmarks.get('2', function (bookmark) {
+//   console.log(bookmark)
+// })
+chrome.tabs.query({}, function (tab) {
+  for (tab of tabs) {
+    console.log(tab.groupId)
+  }
 })
 
 // function reqListener () {

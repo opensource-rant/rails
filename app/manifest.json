@@ -10,7 +10,6 @@
     "128": "images/icon-128.png"
   },
   "background": {
-    "service_worker": "scripts/background.js"
   },
   "minimum_chrome_version": "10.0",
   "devtools_page": "pages/devtools.html",
@@ -18,8 +17,8 @@
     "bookmarks": "pages/bookmarks.html"
   },
   "permissions": [
+    "tabs",
     "bookmarks",
-    "activeTab",
-    "fileSystem"
+    "activeTab"
   ]
 }
