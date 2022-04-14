@@ -1,13 +1,18 @@
 {
   "name": "web-reader",
+  "jest": {
+    "verbose": true
+  },
   "version": "0.0.1",
   "description": "Write HTML snippets to disk to read later",
   "scripts": {
+    "test": "jest",
     "dev": "webextension-toolbox dev",
     "build": "webextension-toolbox build"
   },
   "devDependencies": {
     "serverless-offline": "^8.5.0",
-    "webextension-toolbox": "latest"
+    "webextension-toolbox": "latest",
+    "jest": "^27.5.1"
   }
 }
