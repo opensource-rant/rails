@@ -23,6 +23,11 @@ let bookmarks,
 
 import { TabGroup } from './tabGroup'
 
+let annotatedTab = {
+  url: 'url?tags[]=tabGroupTitle',
+  title: 'title',
+  favIconUrl: 'favIconUrl'
+}
 let tab = {
   id: 1,
   url: 'url',
@@ -30,8 +35,22 @@ let tab = {
   favIconUrl: 'favIconUrl'
 }
 
+
 import { BookmarkCollection } from './bookmarks'
+import { Bookmark } from './bookmark'
 jest.mock('./tabGroup')
+jest.mock('./bookmark')
+beforeAll(() => {
+  TabGroup.mockImplementation(() => {
+    return {
+      get: () => {
+        return {
+          title: 'tabGroupTitle'
+        }
+      }
+    }
+  })
+})
 beforeEach(() => {
   tabs = [tab]
   TabGroup.mockClear()
@@ -40,6 +59,10 @@ beforeEach(() => {
 describe('when the id is a positive integer', () => {
   it('calls getTabGroupInfo with the id of the tab', () => {
     expect(TabGroup).toHaveBeenCalledWith(1)
+  })
+
+  it('creates a bookmark with annotated data', () => {
+    expect(Bookmark).toHaveBeenCalledWith(annotatedTab)
   })
 })
 test.todo('when the id is -1')

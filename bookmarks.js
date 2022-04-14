@@ -1,10 +1,19 @@
 import { TabGroup } from './tabGroup'
+import { Bookmark } from './bookmark'
 export class BookmarkCollection {
   constructor (tabs) {
     this.tabs = tabs
   }
   annotate () {
-    new TabGroup(1)
+    let tabGroup = new TabGroup(1).get()
+    let tab = this.tabs[0]
+    let url = `${tab.url}?tags[]=${tabGroup.title}`
+    let annotatedTab = {
+      url: url,
+      title: tab.title,
+      favIconUrl: tab.favIconUrl
+    }
+    new Bookmark(annotatedTab)
     // for (tab of tabs) {
     //   let id = tab.groupId
     //   if (id != -1)
