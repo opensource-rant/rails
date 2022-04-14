@@ -3,9 +3,14 @@ console.log(`'Allo 'Allo! Bookmarks`)
 // chrome.bookmarks.get('2', function (bookmark) {
 //   console.log(bookmark)
 // })
-chrome.tabs.query({}, function (tab) {
+chrome.tabs.query({}, function (tabs) {
   for (tab of tabs) {
-    console.log(tab.groupId)
+    let id = tab.groupId
+    if (id != -1)
+    {
+      group = chrome.tabGroups.get(id)
+      console.log(group)
+    }
   }
 })
 
