@@ -51,6 +51,7 @@ beforeAll(() => {
     }
   })
 })
+// chrome.tabs.query({}, function(tabs){ for (tab of tabs) { console.log(chrome.tabGroups.get(tab.groupId).then(function (g) { return g.id }), tab.id) } })
 beforeEach(() => {
   tabs = [tab]
   TabGroup.mockClear()
