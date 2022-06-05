@@ -1,17 +1,15 @@
-console.log(`'Allo 'Allo! Bookmarks`)
+console.log(`'HAllo 'Allo! Bookmarks`)
+
+fetch('https://www.fiverr.com/categories/graphics-design/fonts-typography?source=category_tree').then((result) => {
+  console.error(result);
+}).catch((err) => {
+  console.log(err);
+});
 
 // chrome.bookmarks.get('2', function (bookmark) {
 //   console.log(bookmark)
 // })
 chrome.tabs.query({}, function (tabs) {
-  for (tab of tabs) {
-    let id = tab.groupId
-    if (id != -1)
-    {
-      group = chrome.tabGroups.get(id)
-      console.log(group)
-    }
-  }
 })
 
 // function reqListener () {
