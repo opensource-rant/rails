@@ -1,5 +1,11 @@
 console.log("here");
 
+const link = document.querySelector('.sitemap-box').querySelectorAll('.nested-subcategory a')[0]
+
+console.log(link);
+
+chrome.tabs.create({active: false, url: link.href})
+
 
 const oReq = new XMLHttpRequest();
 // oReq.open("GET", "http://www.google.com");
